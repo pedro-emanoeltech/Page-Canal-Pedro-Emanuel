@@ -18,13 +18,13 @@ export default function Home() {
             <div className="flex-1 space-y-6 text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-medium">
                 <Terminal className="w-4 h-4" />
-                <span>Tech, Scripts & Tutoriais</span>
+                <span>Tecnologia, Automação & Tutoriais Práticos</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-display font-extrabold tracking-tight text-balance">
                 Desbloqueie o poder da <span className="text-blue-600">Automação</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl text-balance">
-                Bem-vindo ao canal do Pedro Emanuel. Aqui você encontra os melhores tutoriais, scripts práticos e guias de tecnologia para otimizar sua rotina e elevar suas habilidades de programação.
+                Bem-vindo ao canal do Pedro Emanuel. Aqui você encontra os melhores tutoriais, scripts práticos e guias de tecnologia para otimizar sua rotina e elevar suas habilidades.
               </p>
             </div>
             
@@ -50,7 +50,7 @@ export default function Home() {
         <section className="py-20 px-6 max-w-5xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl font-display font-bold mb-4">Últimos Tutoriais</h2>
-            <p className="text-muted-foreground">Conteúdo passo-a-passo para você implementar hoje mesmo.</p>
+            <p className="text-muted-foreground">Tutoriais diretos, aplicáveis e pensados para resolver problemas reais.</p>
           </div>
 
           {isLoading ? (
@@ -63,7 +63,7 @@ export default function Home() {
             <div className="text-center py-20 bg-muted/20 rounded-2xl border border-dashed border-border">
               <Terminal className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
               <h3 className="text-xl font-bold">Nenhum tutorial encontrado</h3>
-              <p className="text-muted-foreground mt-2">Em breve teremos novos conteúdos disponíveis.</p>
+              <p className="text-muted-foreground mt-2">Novos tutoriais estão sendo preparados. Acompanhe o canal no YouTube para não perder as próximas publicações.</p>
             </div>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
