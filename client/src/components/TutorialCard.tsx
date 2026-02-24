@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, Calendar } from "lucide-react";
-import type { Tutorial } from "@shared/schema";
+import type { Tutorial } from "@/data/tutorials";
 
 interface TutorialCardProps {
   tutorial: Tutorial;
