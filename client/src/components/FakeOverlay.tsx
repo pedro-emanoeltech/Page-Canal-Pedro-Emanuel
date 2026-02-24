@@ -9,11 +9,11 @@ export function FakeOverlay() {
 
   const messages = [
     "Estabelecendo conexão segura",
-    "Aguardando pagamento",
-    "Processando pagamento",
-    "Aguardando pagamento",
-    "Aguardando na tela até o pagamento ser efetivado",
-    "Confirmando..."
+    "Validando acesso...",
+    "Processando acesso...",
+    "Validando acesso...",
+    "Confirmando contribuição...",
+    "Finalizando validação..."
   ];
 
   useEffect(() => {
@@ -71,12 +71,19 @@ export function FakeOverlay() {
           </p>
         </div>
         
-        <h2 className="text-xl md:text-2xl font-bold mb-4 text-white">
-          Para liberar o conteudo é necessario fazer um doação de no minimo R$1,00 Reais apos o pagamento será libera o acesso
+        <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+          Acesso Exclusivo ao Conteúdo
         </h2>
+        <p className="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">
+          Para acessar o material completo, realize uma contribuição única de R$1,00.
+          <br /><br />
+          Após a confirmação, seu acesso será validado automaticamente.
+          <br /><br />
+          Esta página será encerrada em instantes.
+        </p>
         
         <p className="text-blue-400 font-medium mb-8 animate-pulse">
-          aguardando pagamento
+          Validando acesso...
         </p>
         
         <div className="flex items-center justify-center gap-3 text-sm text-gray-400 font-mono bg-white/5 py-3 px-6 rounded-full border border-white/10 min-w-[280px]">
