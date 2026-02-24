@@ -1,0 +1,215 @@
+Crie um projeto de site estático simples em HTML, CSS e JavaScript puro (sem framework), estruturado como um blog para o canal "Pedro Emanuel", focado em tecnologia, scripts e tutoriais.
+
+O projeto deve estar preparado para ser publicado automaticamente no GitHub e integrado ao Netlify (deploy estático).
+
+📁 Estrutura do Projeto
+
+Criar a seguinte estrutura:
+
+/
+│── index.html
+│── style.css
+│── script.js
+│── pages/
+│ ├── tutorial1.html
+│ ├── tutorial2.html
+
+Todas as páginas devem reutilizar o mesmo CSS e JS.
+
+🎯 OBJETIVO DO SITE
+
+Site estilo blog simples com:
+
+Cabeçalho fixo
+
+Links para páginas de tutorial
+
+Layout limpo
+
+Conteúdo estático
+
+Possibilidade de adicionar imagem no topo do conteúdo
+
+Overlay de "processamento" com imagem central
+
+Delay entre 60 e 120 segundos
+
+Após o tempo, tentar fechar a aba automaticamente
+
+Caso não seja permitido fechar, redirecionar para index.html
+
+🎨 ESTILO VISUAL
+
+Criar design simples, minimalista, com:
+
+Fundo branco ou cinza claro
+
+Fonte moderna (Arial, Inter ou sans-serif)
+
+Cabeçalho escuro (#111 ou #222)
+
+Texto em preto
+
+Links em azul padrão
+
+Botões discretos
+
+Layout centralizado com largura máxima de 900px
+
+Espaçamento confortável (padding 20px)
+
+🧠 FUNCIONAMENTO DO OVERLAY
+
+Sempre que abrir qualquer página dentro de /pages/:
+
+Exibir overlay fullscreen com:
+
+Fundo escuro semi-transparente
+
+Imagem central (processamento.png ou placeholder)
+
+Texto: "Processando acesso ao conteúdo..."
+
+Subtexto: "Aguarde enquanto validamos seu acesso."
+
+O overlay deve bloquear interação.
+
+Aplicar delay aleatório entre 60 e 120 segundos.
+
+Após o tempo:
+
+Tentar executar window.close()
+
+Se não funcionar, redirecionar para index.html
+
+Não precisa validar pagamento.
+Não precisa backend.
+Não precisa controle de usuário.
+coloque um lood como se estivesse esperando o pagamento
+
+É apenas comportamento visual.
+
+🧾 ESTRUTURA DAS PÁGINAS
+index.html
+
+Cabeçalho com:
+
+Logo texto: Pedro Emanuel
+
+Menu com links:
+
+Início
+
+Tutorial 1
+
+Tutorial 2
+
+Seção principal com:
+
+Título grande (H1)
+
+Subtítulo
+
+Pequena descrição do canal
+
+Lista de tutoriais com links
+
+pages/tutorial1.html e tutorial2.html
+
+Cada página deve ter:
+
+Mesmo cabeçalho do index
+
+Título H1
+
+Data fictícia
+
+Parágrafo introdutório
+
+Imagem no topo (estática)
+
+Corpo do conteúdo em formato blog:
+
+H2
+
+Parágrafos
+
+Código formatado em <pre><code>
+
+Lista com marcadores
+
+Links externos
+
+⚙ script.js
+
+Implementar:
+
+Função que detecta se está dentro da pasta /pages/
+
+Se estiver:
+
+Criar overlay dinamicamente
+
+Aplicar delay aleatório entre 60000 e 120000 ms
+
+Após delay:
+tentar window.close()
+se falhar, window.location.href = "/index.html"
+
+O código deve ser limpo e comentado.
+
+🧱 BOAS PRÁTICAS
+
+Código organizado
+
+Comentários explicando cada parte
+
+HTML semântico
+
+CSS separado
+
+JS separado
+
+Sem bibliotecas externas
+
+📦 COMPATIBILIDADE
+
+O projeto deve:
+
+Funcionar apenas abrindo o index.html
+
+Estar pronto para push no GitHub
+
+Não depender de build
+
+Ser totalmente estático
+
+Compatível com Netlify deploy automático
+
+🧑‍💻 EXTRA
+
+Adicionar no rodapé:
+
+© 2026 Pedro Emanuel - Tecnologia e Scripts
+
+Gerar todo o código completo de todos os arquivos.
+
+🚀 COMO USAR DEPOIS
+
+Depois que o Replit gerar:
+
+Conectar ao GitHub
+
+Criar repositório
+
+Push
+
+Conectar no Netlify
+
+Deploy automático
+
+Se quiser, eu posso agora:
+
+🔥 Melhorar isso para SEO
+
+💰 Adaptar para modelo de monetização mais profissional
