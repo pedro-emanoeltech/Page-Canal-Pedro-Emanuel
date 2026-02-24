@@ -1,7 +1,11 @@
 import { Link } from "wouter";
 import { Terminal } from "lucide-react";
+import { useTutorials } from "@/hooks/use-tutorials";
 
 export function Header() {
+  const { data: tutorials } = useTutorials();
+  const lastTwo = tutorials?.slice(0, 2) || [];
+
   return (
     <header className="bg-[#111] text-[#fafafa] py-4 sticky top-0 z-40 shadow-md shadow-black/10">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -16,12 +20,16 @@ export function Header() {
           <Link href="/" className="hover:text-blue-400 transition-colors cursor-pointer">
             Início
           </Link>
-          <Link href="/tutorial/tutorial-1" className="hover:text-blue-400 transition-colors cursor-pointer">
-            Tutorial 1
-          </Link>
-          <Link href="/tutorial/tutorial-2" className="hover:text-blue-400 transition-colors cursor-pointer">
-            Tutorial 2
-          </Link>
+          {lastTwo.map((tutorial) => (
+            <Link 
+              key={tutorial.id} 
+              href={`/tutorial/${tutorial.slug}`} 
+              className="hover:text-blue-400 transition-colors cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis max-w-[150px]"
+              title={tutorial.title}
+            >
+              {tutorial.title}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
