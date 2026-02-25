@@ -39,7 +39,7 @@ export function FakeOverlay() {
       >
         <div className="mb-8 flex flex-col items-center">
           <img
-            src="https://user-images.githubusercontent.com/741969/99538133-492fe280-298b-11eb-81a2-66779343e064.png"
+            src="https://avatars.githubusercontent.com/u/51706758?s=400&u=3e7fe60217d6e7d0f54e68c9ca2a30e871f7fd90&v=4"
             alt="Pix"
             className="w-16 h-16 mb-4 object-contain"
           />

@@ -9,8 +9,12 @@ export const tutorials = pgTable("tutorials", {
   content: text("content").notNull(),
   date: text("date").notNull(),
   slug: text("slug").notNull().unique(),
+  nome: text("nome"),
+  link: text("link"),
 });
 
-export const insertTutorialSchema = createInsertSchema(tutorials).omit({ id: true });
+export const insertTutorialSchema = createInsertSchema(tutorials).omit({
+  id: true,
+});
 export type InsertTutorial = z.infer<typeof insertTutorialSchema>;
 export type Tutorial = typeof tutorials.$inferSelect;

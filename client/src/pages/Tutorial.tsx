@@ -1,40 +1,45 @@
 import { useParams } from "wouter";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTutorial } from "@/hooks/use-tutorials";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FakeOverlay } from "@/components/FakeOverlay";
-import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
+import { Calendar, User, ArrowLeft, Clock, Download } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Tutorial() {
   const { slug } = useParams<{ slug: string }>();
   const { data: tutorial, isLoading } = useTutorial(slug || "");
-  const [isOverlayOpen, setIsOverlayOpen] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [isReleased, setIsReleased] = useState(false);
+
+  const handleDownloadClick = () => {
+    if (!tutorial?.link) return;
+
+    // Se já liberado → abre direto
+    if (isReleased) {
+      window.open(tutorial.link, "_blank");
+      return;
+    }
+
+    // Primeira vez → abre overlay
+    setIsOverlayOpen(true);
+
+    setTimeout(() => {
       setIsOverlayOpen(false);
-    }, 120000);
-
-    return () => clearTimeout(timer);
-  }, []);
+      setIsReleased(true);
+    }, 120000); // 2 minutos
+  };
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-12">
-          {/* Skeleton Loading */}
           <div className="h-8 w-24 bg-muted animate-pulse rounded mb-8" />
           <div className="h-16 w-3/4 bg-muted animate-pulse rounded mb-6" />
           <div className="h-6 w-1/2 bg-muted animate-pulse rounded mb-12" />
-          <div className="h-[400px] w-full bg-muted animate-pulse rounded-2xl mb-12" />
-          <div className="space-y-4">
-            <div className="h-4 w-full bg-muted animate-pulse rounded" />
-            <div className="h-4 w-full bg-muted animate-pulse rounded" />
-            <div className="h-4 w-4/5 bg-muted animate-pulse rounded" />
-          </div>
         </main>
       </div>
     );
@@ -85,15 +90,15 @@ export default function Tutorial() {
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-mono bg-muted/30 py-3 px-6 rounded-xl border border-border/50">
               <div className="flex items-center gap-2">
-                <User className="w-4 h-4 text-blue-500" />{" "}
+                <User className="w-4 h-4 text-blue-500" />
                 <span>Pedro Emanuel</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-blue-500" />{" "}
+                <Calendar className="w-4 h-4 text-blue-500" />
                 <span>{tutorial.date}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-blue-500" />{" "}
+                <Clock className="w-4 h-4 text-blue-500" />
                 <span>10 min de leitura</span>
               </div>
             </div>
@@ -107,9 +112,29 @@ export default function Tutorial() {
             />
           </div>
 
-          <div className="prose prose-lg prose-blue max-w-none prose-headings:font-display prose-pre:bg-[#111] prose-pre:border prose-pre:border-border/10">
+          <div className="prose prose-lg prose-blue max-w-none prose-headings:font-display prose-pre:bg-[#111] prose-pre:border prose-pre:border-border/10 mb-16">
             <div dangerouslySetInnerHTML={{ __html: tutorial.content }} />
           </div>
+
+          {/* BOTÃO DE DOWNLOAD */}
+          {tutorial.nome && tutorial.link && (
+            <div className="flex justify-center">
+              <button
+                onClick={handleDownloadClick}
+                className={`flex items-center gap-3 px-8 py-4 rounded-xl font-semibold shadow-lg transition-all
+                ${
+                  isReleased
+                    ? "bg-green-600 hover:bg-green-700 text-white"
+                    : "bg-blue-600 hover:bg-blue-700 text-white"
+                }`}
+              >
+                <Download className="w-5 h-5" />
+                {isReleased
+                  ? `Baixar ${tutorial.nome}`
+                  : `Liberar download (${tutorial.nome})`}
+              </button>
+            </div>
+          )}
         </article>
       </main>
 
