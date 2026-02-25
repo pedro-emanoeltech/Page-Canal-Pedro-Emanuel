@@ -18,11 +18,14 @@ export function FakeOverlay() {
 
   useEffect(() => {
     // 2 minutes as requested
-    const delay = 100000;
+    const delay = 10000;
 
     const timer = setTimeout(() => {
       try {
         window.close();
+        setTimeout(() => {
+           onFinish(); // apenas fecha
+        }, 200);
       } catch (error) {
         setLocation("/");
       }

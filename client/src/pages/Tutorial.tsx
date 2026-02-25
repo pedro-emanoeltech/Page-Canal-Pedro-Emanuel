@@ -37,8 +37,13 @@ export default function Tutorial() {
         <Header />
         <main className="flex-1 flex flex-col items-center justify-center p-6 text-center">
           <h1 className="text-4xl font-display font-bold mb-4">404</h1>
-          <p className="text-xl text-muted-foreground mb-8">Tutorial não encontrado.</p>
-          <Link href="/" className="text-primary hover:underline flex items-center gap-2">
+          <p className="text-xl text-muted-foreground mb-8">
+            Tutorial não encontrado.
+          </p>
+          <Link
+            href="/"
+            className="text-primary hover:underline flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" />
             Voltar para o início
           </Link>
@@ -53,10 +58,13 @@ export default function Tutorial() {
       <FakeOverlay />
 
       <Header />
-      
+
       <main className="flex-1">
         <article className="max-w-3xl mx-auto px-6 py-12 lg:py-20">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
+          >
             <ArrowLeft className="w-4 h-4" />
             Voltar para todos os tutoriais
           </Link>
@@ -65,7 +73,7 @@ export default function Tutorial() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold leading-tight mb-6">
               {tutorial.title}
             </h1>
-            
+
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               {tutorial.description}
             </p>
@@ -89,8 +97,8 @@ export default function Tutorial() {
           {/* Unsplash static placeholder image as requested */}
           {/* desk with laptop aesthetic */}
           <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl shadow-black/10 border border-border/50 relative aspect-[21/9]">
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop" 
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop"
               alt="Tutorial Cover"
               className="w-full h-full object-cover"
             />
