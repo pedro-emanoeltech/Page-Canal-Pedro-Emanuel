@@ -1,0 +1,23 @@
+atualize as duas publicações para duas publicações com video e links para download padronizadas para um blog técnico.
+
+Estrutura padrão de cada página:
+
+Título grande
+
+Parágrafo explicando o que é e como funciona
+
+Seção ensinando como fazer passo a passo
+
+Vídeo do YouTube incorporado responsivo
+
+Botão verde de download externo
+
+Botão voltar para index.html
+
+Use CSS moderno com layout centralizado, fundo claro, header escuro e botões azuis e verdes. conforme o padrao do site existente
+vou te manda as duas publicações
+
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Atualizar Firmware Argox OS214 Plus</title> <link rel="stylesheet" href="assets/style.css"> </head> <body> <header> <h1>ATUALIZAR FIRMWARE ARGOX OS214 PLUS - PPLA PARA PPLB</h1> <a href="index.html" class="voltar">← Voltar</a> </header> <main class="container"> <section> <h2>O que é e como funciona</h2> <p> Neste tutorial você aprenderá como atualizar o firmware da impressora Argox OS214 Plus convertendo de PPLA para PPLB. Essa atualização permite melhor compatibilidade com sistemas e melhora o desempenho da impressora. </p> </section> <section> <h2>Como fazer a atualização</h2> <p> 1. Baixe o arquivo disponível abaixo.<br> 2. Conecte a impressora ao computador.<br> 3. Execute o software de atualização.<br> 4. Aguarde a conclusão e reinicie o equipamento. </p> </section> <section class="video"> <iframe width="100%" height="500" src="https://www.youtube.com/embed/R1ZcboaqsuE" title="YouTube video player" frameborder="0" allowfullscreen> </iframe> </section> <section class="download"> <a href="https://mega.nz/file/d3x3AIiD#xm5VWCnY6UzTpPVaVnz0UFIiiZp_v8BHl4YfE75Pl9g" target="_blank" class="btn-download"> Baixar Arquivo </a> </section> </main> </body> </html>
+e a segunda
+
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Atualizar Drivers Windows 11</title> <link rel="stylesheet" href="assets/style.css"> </head> <body> <header> <h1>Como atualizar os drivers do computador - Windows 11 (Fácil)</h1> <a href="index.html" class="voltar">← Voltar</a> </header> <main class="container"> <section> <h2>O que é e como funciona</h2> <p> Manter os drivers atualizados é essencial para garantir melhor desempenho, segurança e compatibilidade no Windows 11. Drivers são responsáveis por permitir que o sistema se comunique com o hardware. </p> </section> <section> <h2>Como atualizar os drivers</h2> <p> 1. Abra o Gerenciador de Dispositivos.<br> 2. Clique com o botão direito no dispositivo desejado.<br> 3. Selecione "Atualizar driver".<br> 4. Escolha buscar automaticamente.<br> 5. Reinicie o computador após atualização. </p> </section> <section class="video"> <iframe width="100%" height="500" src="https://www.youtube.com/embed/SZLAkhKq0jc" title="YouTube video player" frameborder="0" allowfullscreen> </iframe> </section> <section class="download"> <a href="https://mega.nz/file/B7hVlD4I#UxfINDk58jt6-aOYTWQryXU0NfXGasydiI4zZ88cg7Y" target="_blank" class="btn-download"> Baixar Arquivo </a> </section> </main> </body> </html>
