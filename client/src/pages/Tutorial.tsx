@@ -12,11 +12,10 @@ export default function Tutorial() {
   const { data: tutorial, isLoading } = useTutorial(slug || "");
   const [isOverlayOpen, setIsOverlayOpen] = useState(true);
 
-  // Fechamento automático do overlay após 10 segundos
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsOverlayOpen(false); // remove o modal do DOM automaticamente
-    }, 10000);
+      setIsOverlayOpen(false);
+    }, 120000);
 
     return () => clearTimeout(timer);
   }, []);
